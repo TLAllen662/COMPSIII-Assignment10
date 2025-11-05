@@ -22,3 +22,11 @@ top_songs = df['song_title'].value_counts().head(5)
 
 # Get top 5 most listened to genres
 top_genres = df['genre'].value_counts().head(5)
+
+# Calculate songs listened to by day
+days = df['day'].value_counts().sort_index()
+
+# Calculate songs listened to by month
+month = df['month'].value_counts().sort_index()
+
+
