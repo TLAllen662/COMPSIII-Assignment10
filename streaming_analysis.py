@@ -36,6 +36,34 @@ days = df['day_of_week'].value_counts().sort_index()
 # Calculate songs listened to by month
 month = df['month'].value_counts().sort_index()
 
+# Print Year in Music Summary
+print("Your Year in Music Summary:")
+print(f"Average Completion Rate: {completion_rate:.4f}")
+print(f"Total Listening Time (seconds): {total_time}")
+print(f"Total Listening Time (minutes): {total_minutes:.2f}")
+print(f"Total Listening Time (hours): {total_hours:.2f}")
+print()
+
+print("Top Artists:")
+print(top_artists)
+print()
+
+print("Top Songs:")
+print(top_songs)
+print()
+
+print("Top Genres:")
+print(top_genres)
+print()
+
+print("Songs by Day of Week:")
+print(days)
+print()
+
+print("Songs by Month:")
+print(month)
+print()
+
 # Create visualizations
 
 # 1. Bar chart of songs listened by day of the week
