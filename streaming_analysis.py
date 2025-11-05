@@ -4,6 +4,12 @@ import matplotlib.pyplot as plt
 # Read the CSV file
 df = pd.read_csv('streaming_data.csv')
 
+# Debug: Print column names to see what's available
+print("Available columns in the DataFrame:")
+print(df.columns.tolist())
+print("\nFirst few rows of data:")
+print(df.head())
+
 # Add month and day ordering
 month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] 
 day_order = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] 
