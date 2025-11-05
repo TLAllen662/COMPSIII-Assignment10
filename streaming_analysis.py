@@ -4,12 +4,6 @@ import matplotlib.pyplot as plt
 # Read the CSV file
 df = pd.read_csv('streaming_data.csv')
 
-# Debug: Print column names to see what's available
-print("Available columns in the DataFrame:")
-print(df.columns.tolist())
-print("\nFirst few rows of data:")
-print(df.head())
-
 # Add month and day ordering
 month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] 
 day_order = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] 
@@ -21,7 +15,7 @@ df['day_of_week'] = pd.Categorical(df['day_of_week'], categories=day_order, orde
 completion_rate = df['completion_rate'].mean()
 
 # Calculate total listening time in seconds
-total_time = df['listening_time'].sum()
+total_time = df['duration_seconds'].sum()
 
 # Convert to minutes and hours for easier reading
 total_minutes = total_time / 60
@@ -31,7 +25,7 @@ total_hours = total_time / 3600
 top_artists = df['artist'].value_counts().head(5)
 
 # Get top 5 most listened to songs
-top_songs = df['song_title'].value_counts().head(5)
+top_songs = df['song'].value_counts().head(5)
 
 # Get top 5 most listened to genres
 top_genres = df['genre'].value_counts().head(5)
