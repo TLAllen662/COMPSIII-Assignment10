@@ -4,6 +4,13 @@ import pandas as pd
 # Read the CSV file
 df = pd.read_csv('streaming_data.csv')
 
+# Add month and day ordering
+month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] 
+day_order = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] 
+
+df['month'] = pd.Categorical(df['month'], categories=month_order, ordered=True) 
+df['day_of_week'] = pd.Categorical(df['day_of_week'], categories=day_order, ordered=True) 
+
 # Add completion rate calculation
 completion_rate = df['completion_rate'].mean()
 
